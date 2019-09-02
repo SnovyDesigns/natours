@@ -34,14 +34,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader', options: { sourceMap: true } },
+          { loader: 'style-loader'},
           { loader: 'css-loader', options: { sourceMap: true } }
         ]
       },
       {
         test: /\.(scss|sass)$/,
         use: [
-          { loader: 'style-loader', options: { sourceMap: true } },
+          { loader: 'style-loader'},
           { loader: 'css-loader', options: { sourceMap: true } },
           {
             loader: 'postcss-loader',
