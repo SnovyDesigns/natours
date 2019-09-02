@@ -52,12 +52,14 @@ body {
 .text-box {
   @include absolute(top 40% left 50%);
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
+  margin-bottom: 60px;
 
   &-main,
   &-sub {
@@ -108,5 +110,35 @@ body {
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+.btn {
+  backface-visibility: hidden;
+
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.25s;
+  }
+
+  &:focus,
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color: #000000, $alpha: 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.2);
+  }
+
+  &-white {
+    background-color: #fff;
+    color: #777;
   }
 }
