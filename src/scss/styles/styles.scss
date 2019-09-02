@@ -45,20 +45,20 @@ body {
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
-}
 
-.logo-box {
-  @include absolute(top 4rem left 4rem);
-}
+  &__logo-box {
+    @include absolute(top 4rem left 4rem);
+  }
 
-.logo {
-  height: 3.5rem;
-}
+  &__logo {
+    height: 3.5rem;
+  }
 
-.text-box {
-  @include absolute(top 40% left 50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+  &__text-box {
+    @include absolute(top 40% left 50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
 .heading-primary {
@@ -67,19 +67,19 @@ body {
   backface-visibility: hidden;
   margin-bottom: 6rem;
 
-  &-main,
-  &-sub {
+  &--main,
+  &--sub {
     display: block;
   }
 
-  &-main {
+  &--main {
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
     animation: moveInLeft 1s ease-out;
   }
 
-  &-sub {
+  &--sub {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
@@ -132,6 +132,14 @@ body {
 }
 
 .btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.25s;
+  position: relative;
+  font-size: 1.6rem;
   backface-visibility: hidden;
 
   &::after {
@@ -142,18 +150,6 @@ body {
     @include absolute(top 0 left 0);
     z-index: -1;
     transition: all 0.4s;
-  }
-
-  &:link,
-  &:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all 0.25s;
-    position: relative;
-    font-size: 1.6rem;
   }
 
   &:focus,
@@ -172,7 +168,7 @@ body {
     box-shadow: 0 0.5rem 1rem rgba($color: #000000, $alpha: 0.2);
   }
 
-  &-white {
+  &--white {
     background-color: #fff;
     color: #777;
 
@@ -181,7 +177,7 @@ body {
     }
   }
 
-  &-animated {
+  &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
   }
