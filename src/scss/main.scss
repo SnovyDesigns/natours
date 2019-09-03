@@ -1,16 +1,43 @@
 // ---------------------
-//     HELPERS
+//     ABSTRACTS
 // ---------------------
 
-// **** FUNCTIONS ****
-@import 'helpers/functions';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/media-queries-mixins';
+@import 'abstracts/variables';
 
-// **** MIXINS ****
-@import 'helpers/mixins';
+// ----------------------------------------------
 
-// **** MEDIA QUERIES MIXINS ****
-@import 'helpers/media-queries';
+// ---------------------
+//     BASE
+// ---------------------
 
-// ---------------------------------------------------------------------------
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import 'styles/styles';
+// ----------------------------------------------
+
+// ---------------------
+//     COMPONENTS
+// ---------------------
+
+@import 'components/button';
+
+// ----------------------------------------------
+
+// ---------------------
+//     LAYOUT
+// ---------------------
+
+@import 'layout/header';
+
+// ----------------------------------------------
+
+// ---------------------
+//     PAGES
+// ---------------------
+
+@import 'pages/home';

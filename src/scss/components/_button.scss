@@ -1,0 +1,51 @@
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  @include brr(10);
+  transition: all 0.25s;
+  position: relative;
+  font-size: 1.6rem;
+  backface-visibility: hidden;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    @include size(100%);
+    @include brr(10);
+    @include absolute(top 0 left 0);
+    z-index: -1;
+    @include trans(0.4);
+  }
+
+  &:focus,
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color: $color-black, $alpha: 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
