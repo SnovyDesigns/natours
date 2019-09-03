@@ -1,0 +1,17 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+
+  .heading-secondary {
+    grid-column: 1 / -1;
+  }
+
+  .text-wrapper {
+    grid-column: span 2;
+  }
+
+  .composition {
+    grid-column: span 2;
+  }
+}

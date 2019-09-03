@@ -24,6 +24,7 @@
 //     COMPONENTS
 // ---------------------
 
+@import 'components/composition';
 @import 'components/button';
 
 // ----------------------------------------------
@@ -32,6 +33,7 @@
 //     LAYOUT
 // ---------------------
 
+@import 'layout/grid';
 @import 'layout/header';
 
 // ----------------------------------------------

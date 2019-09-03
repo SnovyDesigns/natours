@@ -12,20 +12,6 @@ $unit: rem !default;
   height: $height;
 }
 
-// Box shadow
-@mixin box-sh($x, $y, $blur, $shcolor, $opacity) {
-  @if unitless($x) {
-    $x: $x + $unit;
-  }
-  @if unitless($y) {
-    $y: $y + $unit;
-  }
-  @if unitless($blur) {
-    $blur: $blur + $unit;
-  }
-  box-shadow: $x $y $blur rgba($color: $shcolor, $alpha: $opacity);
-}
-
 // Transition
 @mixin trans($speed: 0.3, $easing: ease-in, $props: all) {
   transition: $props #{$speed}s $easing;

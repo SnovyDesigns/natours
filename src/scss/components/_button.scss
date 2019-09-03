@@ -6,7 +6,7 @@
   @include brr(10);
   transition: all 0.25s;
   position: relative;
-  font-size: 1.6rem;
+  font-size: $font-size-base;
   backface-visibility: hidden;
 
   &::after {
@@ -32,7 +32,6 @@
 
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 0.5rem 1rem rgba($color: $color-black, $alpha: 0.2);
   }
 
   &--white {
@@ -47,5 +46,26 @@
   &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  font-size: $font-size-base;
+  color: $color-primary;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid $color-primary;
+  padding: 3px;
+
+  &:focus,
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: 0.15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }
