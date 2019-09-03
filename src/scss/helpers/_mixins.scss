@@ -13,7 +13,7 @@ $unit: rem !default;
 }
 
 // Box shadow
-@mixin bshadow($x, $y, $blur, $shcolor, $opacity) {
+@mixin box-sh($x, $y, $blur, $shcolor, $opacity) {
   @if unitless($x) {
     $x: $x + $unit;
   }
