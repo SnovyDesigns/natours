@@ -19,3 +19,8 @@ html {
 body {
   box-sizing: border-box;
 }
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+}

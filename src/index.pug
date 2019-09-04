@@ -1,4 +1,11 @@
+//- PUG INCLUDES
 include ./includes/main
+
+//- PAGE DATA
+- const featuresSectionData = require("./js/data/featuresSectionData.js");
+- const toursSectionData = require("./js/data/toursSectionData.js");
+
+//- -----------------------------------
 
 doctype html
 html(lang="en")
@@ -20,33 +27,33 @@ html(lang="en")
         a(href="#").btn.btn--white.btn--animated Discover our tours
     main
       section.section-about
-        .main-grid
-          h2.heading-secondary.u-margin-bottom-big.u-text-center Exciting tours for adventurous people
-          .text-wrapper
-            h3.heading-tertiary.u-margin-bottom-small You're going to fall in love with nature
-            p.paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eveniet deleniti eius velit ducimus nisi! Quia natus mollitia odio deleniti consectetur! Dolor, eos. 
-            h3.heading-tertiary.u-margin-bottom-small Live adventures like you never have before
-            p.paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam itaque nisi molestias cum?
-            a(href="#").btn-text Learn more &rarr;
-          .composition
-            img(src=require("./img/nat-1-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph1
-            img(src=require("./img/nat-2-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph2
-            img(src=require("./img/nat-3-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph3
+        .container
+          .u-text-center.u-margin-bottom-big
+            h2.heading-secondary Exciting tours for adventurous people
+          .about-grid
+            .text-wrapper
+              h3.heading-tertiary.u-margin-bottom-small You're going to fall in love with nature
+              p.paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eveniet deleniti eius velit ducimus nisi! Quia natus mollitia odio deleniti consectetur! Dolor, eos. 
+              h3.heading-tertiary.u-margin-bottom-small Live adventures like you never have before
+              p.paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam itaque nisi molestias cum?
+              a(href="#").btn-text Learn more &rarr;
+            .composition
+              img(src=require("./img/nat-1-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph1
+              img(src=require("./img/nat-2-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph2
+              img(src=require("./img/nat-3-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph3
       section.section-features
-        .main-grid
-          .feature-box
-            +svg-feature-world
-            h3.heading-tertiary.u-margin-bottom-small Explore the world
-            p.feature-box__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur aliquam libero!
-          .feature-box
-            +svg-feature-compass
-            h3.heading-tertiary.u-margin-bottom-small Meet nature
-            p.feature-box__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur aliquam libero!
-          .feature-box
-            +svg-feature-map
-            h3.heading-tertiary.u-margin-bottom-small Find your way
-            p.feature-box__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur aliquam libero!
-          .feature-box
-            +svg-feature-heart
-            h3.heading-tertiary.u-margin-bottom-small Live a healthier life
-            p.feature-box__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur aliquam libero!
+        .container
+          .about-grid
+            for data in featuresSectionData
+              +feature-box(data)
+            
+      section.section-tours
+        .container
+          .u-text-center.u-margin-bottom-big
+            h2.heading-secondary Most popular tours
+          .tours-grid
+            for data, index in toursSectionData
+              +card(data, index)
+          .u-text-center.u-margin-top-huge
+            a(href="#", title="title").btn.btn--green Discover all tours 
+

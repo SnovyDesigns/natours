@@ -1,7 +1,11 @@
-.main-grid {
-  max-width: $grid-width;
-  margin: 0 auto;
+.about-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: $grid-gap-vertical $grid-gap-horizontal;
+}
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: $grid-gap-vertical $grid-gap-horizontal;
 }

@@ -17,46 +17,6 @@ $unit: rem !default;
   transition: $props #{$speed}s $easing;
 }
 
-// Margin - bottom | top | left | right
-@mixin marg($values...) {
-  margin-bottom: #{nth($values, 1)}$unit;
-
-  @if length($values) == 2 {
-    margin-top: #{nth($values, 2)}$unit;
-  }
-
-  @if length($values) == 3 {
-    margin-top: #{nth($values, 2)}$unit;
-    margin-left: #{nth($values, 3)}$unit;
-  }
-
-  @if length($values) == 4 {
-    margin-top: #{nth($values, 2)}$unit;
-    margin-left: #{nth($values, 3)}$unit;
-    margin-right: #{nth($values, 4)}$unit;
-  }
-}
-
-// Padding - top | bottom | left | right
-@mixin padd($values...) {
-  padding-top: #{nth($values, 1)}$unit;
-
-  @if length($values) == 2 {
-    padding-bottom: #{nth($values, 2)}$unit;
-  }
-
-  @if length($values) == 3 {
-    padding-bottom: #{nth($values, 2)}$unit;
-    padding-left: #{nth($values, 3)}$unit;
-  }
-
-  @if length($values) == 4 {
-    padding-bottom: #{nth($values, 2)}$unit;
-    padding-left: #{nth($values, 3)}$unit;
-    padding-right: #{nth($values, 4)}$unit;
-  }
-}
-
 // Border radius & border
 @mixin brr($radius: 0.5, $border...) {
   @if unitless($radius) {
@@ -98,32 +58,11 @@ $unit: rem !default;
   @include position(relative, $args);
 }
 
-// Exaple
-// .sub-menu {
-//   @include absolute(top 100% left 0);
-// }
-
 // Generate li items
 @mixin list($list) {
   @each $item in $list {
     li.#{$item} {
       background-image: url(images/#{$item}-icon.svg);
     }
-  }
-}
-
-// Generate gradients with multiple colors
-@mixin linear-gradient($direction, $gradients...) {
-  background-color: nth($gradients, 1);
-  background-image: linear-gradient($direction, $gradients...);
-}
-
-// Simple zebra style for tr in table
-@mixin zebra-style($color) {
-  tr:nth-child(odd) {
-    background-color: $color;
-  }
-  tr:nth-child(even) {
-    background-color: darken($color, 20%);
   }
 }

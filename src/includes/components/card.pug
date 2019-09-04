@@ -1,0 +1,16 @@
+mixin card(data, index)
+  .card
+    .card__side.card__side--front
+      .card__picture(class=`card__picture--${index+1}`)
+      h4.card__heading
+        span.card__heading-span(class=`card__heading-span--${index+1}`)= data.heading
+      .card__details
+        ul
+          for detail in data.details
+            li=detail
+    .card__side.card__side--back(class=`card__side--back-${index+1}`)
+      .card__cta
+        .card__price-box.u-margin-bottom-big
+          p.card__price-only Only
+          p.card__price-value= data.price
+        a(href="#").btn.btn--white Book now! 

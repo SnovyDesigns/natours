@@ -2,10 +2,10 @@
 //     ABSTRACTS
 // ---------------------
 
+@import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 @import 'abstracts/media-queries-mixins';
-@import 'abstracts/variables';
 
 // ----------------------------------------------
 
@@ -25,6 +25,7 @@
 // ---------------------
 
 @import 'components/composition';
+@import 'components/card.scss';
 @import 'components/button';
 @import 'components/feature-box';
 
