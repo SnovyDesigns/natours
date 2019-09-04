@@ -13,3 +13,17 @@
 .u-text-center {
   text-align: center;
 }
+
+// ----------------------------------------------
+
+// ***** GRADIENTS USED FOR SVG *****
+
+#horizontal-gradient {
+  --color-stop-1: #7ed56f; // $color-primary-light
+  --color-stop-3: #28b485; // $color-primary-dark
+}
+
+#vertical-gradient {
+  --color-stop-1: #7ed56f; // $color-primary-light
+  --color-stop-3: #28b485; // $color-primary-dark
+}

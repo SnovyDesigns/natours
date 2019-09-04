@@ -1,3 +1,5 @@
+include ./includes/main
+
 doctype html
 html(lang="en")
   head
@@ -7,6 +9,7 @@ html(lang="en")
     title Natours | Exciting tours for adventurous people
     link(href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap', rel='stylesheet')
   body
+    +svg-horizontal-gradient
     header.header
       .header__logo-box
         img(src=require("./img/logo-white.png"), alt="Logo").header__logo
@@ -29,3 +32,21 @@ html(lang="en")
             img(src=require("./img/nat-1-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph1
             img(src=require("./img/nat-2-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph2
             img(src=require("./img/nat-3-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph3
+      section.section-features
+        .main-grid
+          .feature-box
+            +svg-feature-world
+            h3.heading-tertiary.u-margin-bottom-small Explore the world
+            p.feature-box__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur aliquam libero!
+          .feature-box
+            +svg-feature-compass
+            h3.heading-tertiary.u-margin-bottom-small Meet nature
+            p.feature-box__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur aliquam libero!
+          .feature-box
+            +svg-feature-map
+            h3.heading-tertiary.u-margin-bottom-small Find your way
+            p.feature-box__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur aliquam libero!
+          .feature-box
+            +svg-feature-heart
+            h3.heading-tertiary.u-margin-bottom-small Live a healthier life
+            p.feature-box__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur aliquam libero!

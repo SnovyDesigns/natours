@@ -1,0 +1,22 @@
+.feature-box {
+  background-color: rgba($color: $color-white, $alpha: 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  @include brr(3px);
+  box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 0.15);
+  @include trans(0.3, transform);
+
+  &__icon {
+    margin: 0 auto 1.5rem;
+    stroke: url(#horizontal-gradient);
+
+    line {
+      stroke: $color-primary;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+}
