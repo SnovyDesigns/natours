@@ -100,6 +100,15 @@ module.exports = {
       {
         test: /\.pug$/,
         use: ['pug-loader']
+      },
+      {
+        test: /\.(mov|mp4|ogv|webm)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'video/[name].[ext]'
+          }
+        }
       }
     ]
   },

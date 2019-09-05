@@ -4,6 +4,7 @@ include ./includes/main
 //- PAGE DATA
 - const featuresSectionData = require("./js/data/featuresSectionData.js");
 - const toursSectionData = require("./js/data/toursSectionData.js");
+- const storiesSectionData = require("./js/data/storiesSectionData.js");
 
 //- -----------------------------------
 
@@ -41,6 +42,7 @@ html(lang="en")
               img(src=require("./img/nat-1-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph1
               img(src=require("./img/nat-2-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph2
               img(src=require("./img/nat-3-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph3
+      
       section.section-features
         .container
           .about-grid
@@ -56,4 +58,13 @@ html(lang="en")
               +card(data, index)
           .u-text-center.u-margin-top-huge
             a(href="#", title="title").btn.btn--green Discover all tours 
+      
+      section.section-stories
+        .container
+          .u-text-center.u-margin-bottom-big
+            h2.heading-secondary We make people genuinely happy
+          for data in storiesSectionData
+              +story(data)
+          .u-text-center.u-margin-top-huge
+            a(href="#").btn-text Read all stories &rarr; 
 

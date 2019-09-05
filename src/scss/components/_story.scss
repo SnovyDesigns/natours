@@ -1,0 +1,59 @@
+.story {
+  width: 75%;
+  margin: 0 auto 8rem;
+  box-shadow: 0 3rem 6rem rgba($color: $color-black, $alpha: 0.1);
+  background-color: $color-white;
+  @include brr(3px);
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $font-size-base;
+  transform: skewX(-12deg);
+
+  // W tym przypadku sposob z section-features nie zadziala - nie mozemy bowiem nadac dwoch roznych transform na jeden element (u nas ma go .story__shape) - dlatego tez musimy dodac te wlasciwosci osobno dla tekstu i ksztaltu
+  // & > * {
+  //   transform: skewX(12deg);
+  // }
+
+  &__shape {
+    // Shape-outside dziala wylacznie z ustawionym float oraz wtedy, gdy taki element ma ustawione width i height
+    @include size(15);
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+  }
+
+  &__img {
+    @include size(100%);
+    object-fit: cover;
+    transform: scale(1.2);
+    @include trans(0.5);
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    @include absolute(top 50% left 50%);
+    transform: translate(-50%, 20%);
+    opacity: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 1.7rem;
+    @include trans(0.5);
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}

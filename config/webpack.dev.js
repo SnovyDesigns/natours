@@ -17,7 +17,7 @@ module.exports = {
   devServer: {
     contentBase: 'dist',
     noInfo: true,
-    clientLogLevel: 'silent',
+    clientLogLevel: 'silent'
   },
   module: {
     rules: [
@@ -34,14 +34,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader'},
+          { loader: 'style-loader' },
           { loader: 'css-loader', options: { sourceMap: true } }
         ]
       },
       {
         test: /\.(scss|sass)$/,
         use: [
-          { loader: 'style-loader'},
+          { loader: 'style-loader' },
           { loader: 'css-loader', options: { sourceMap: true } },
           {
             loader: 'postcss-loader',
@@ -74,6 +74,10 @@ module.exports = {
       {
         test: /\.pug$/,
         use: ['pug-loader']
+      },
+      {
+        test: /\.(mov|mp4|ogv|webm)$/,
+        loader: 'file-loader'
       }
     ]
   },

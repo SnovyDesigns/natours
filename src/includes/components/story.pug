@@ -1,0 +1,8 @@
+mixin story(data)
+  .story
+    figure.story__shape
+      img(src=require(`./img/${data.image}`), alt=`${data.alt}`).story__img
+      figcaption.story__caption= data.caption
+    .story__text
+      h3.heading-tertiary.u-margin-bottom-small= data.heading
+      p= data.text
