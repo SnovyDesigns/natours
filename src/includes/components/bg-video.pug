@@ -1,0 +1,6 @@
+mixin bg-video(name)
+  .bg-video
+    video.bg-video__content(autoplay muted loop)
+      source(src=require(`./video/${name}.mp4`), type="video/mp4")
+      source(src=require(`./video/${name}.webm`), type="video/webm")
+      | Your browser is not supported!

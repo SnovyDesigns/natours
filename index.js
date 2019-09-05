@@ -11,12 +11,3 @@ import './src/scss/main.scss';
 // ---------------------
 
 import './src/js/main';
-
-// --------------------------------------
-
-// ---------------------
-//     VIDEO
-// ---------------------
-
-import './src/video/video.mp4';
-import './src/video/video.webm';
