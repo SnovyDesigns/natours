@@ -5,6 +5,7 @@ include ./includes/main
 - const featuresSectionData = require("./js/data/featuresSectionData.js");
 - const toursSectionData = require("./js/data/toursSectionData.js");
 - const storiesSectionData = require("./js/data/storiesSectionData.js");
+- const bookSectionFormData = require("./js/data/bookSectionFormData.js");
 
 //- -----------------------------------
 
@@ -19,8 +20,7 @@ html(lang="en")
   body
     +svg-horizontal-gradient
     header.header
-      .header__logo-box
-        img(src=require("./img/logo-white.png"), alt="Logo").header__logo
+      +svg-logo('header__logo')
       .header__text-box
         h1.heading-primary
           span.heading-primary--main Outdoors
@@ -69,3 +69,24 @@ html(lang="en")
           .u-text-center.u-margin-top-huge
             a(href="#").btn-text Read all stories &rarr; 
 
+      section.section-book
+        .container
+          .book
+            .book__form
+              +form(bookSectionFormData, 'Start booking now!')
+              
+    footer.footer
+      .container
+        .footer__logo-box.u-margin-bottom-big
+          +svg-logo('footer__logo')
+          p.footer__logo-text Natours
+        .footer__flex-wrapper
+          .footer__navigation
+            ul.footer__list
+              for item in ['Company','Contact us','Carrers','Privacy policy','Terms']
+                li.footer__item
+                  a.footer__link(href="#")= item
+          p.footer__copyright Project design by Jonas Schmedtmann
+
+
+      

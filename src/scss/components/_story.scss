@@ -3,7 +3,7 @@
   margin: 0 auto 8rem;
   box-shadow: 0 3rem 6rem rgba($color: $color-black, $alpha: 0.1);
   background-color: rgba($color: $color-white, $alpha: 0.6);
-  @include brr(3px);
+  @include brr($br-radius);
   padding: 6rem;
   padding-left: 9rem;
   font-size: $font-size-base;

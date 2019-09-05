@@ -1,0 +1,57 @@
+.footer {
+  background-color: $color-grey-dark-3;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+
+  &__logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    fill: url(#horizontal-gradient);
+    width: 15rem;
+    height: auto;
+  }
+
+  &__logo-text {
+    @extend %text-gradient;
+    font-size: 2.4rem;
+    margin-top: 0.5rem;
+  }
+
+  &__flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__navigation,
+  &__copyright {
+    border-top: 1px solid $color-grey-dark;
+    padding-top: 2rem;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__link {
+    color: $color-grey-light-1;
+    background-color: $color-grey-dark-3;
+    text-transform: uppercase;
+    display: inline-block;
+    @include trans(0.25);
+
+    &:hover,
+    &:active {
+      color: $color-primary-dark;
+      box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: 0.4);
+      transform: scale(1.1);
+    }
+  }
+}

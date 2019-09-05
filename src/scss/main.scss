@@ -3,6 +3,7 @@
 // ---------------------
 
 @import 'abstracts/variables';
+@import 'abstracts/extends';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 @import 'abstracts/media-queries-mixins';
@@ -30,6 +31,7 @@
 @import 'components/feature-box';
 @import 'components/story';
 @import 'components/bg-video';
+@import 'components/form';
 
 // ----------------------------------------------
 
@@ -39,6 +41,7 @@
 
 @import 'layout/grid';
 @import 'layout/header';
+@import 'layout/footer';
 
 // ----------------------------------------------
 

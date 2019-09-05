@@ -8,6 +8,8 @@
   position: relative;
   font-size: $font-size-base;
   backface-visibility: hidden;
+  border: 0;
+  cursor: pointer;
 
   &::after {
     content: '';
@@ -19,7 +21,6 @@
     @include trans(0.4);
   }
 
-  &:focus,
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha: 0.2);
@@ -30,8 +31,11 @@
     }
   }
 
+  &:focus,
   &:active {
     transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color: $color-black, $alpha: 0.2);
+    outline: none;
   }
 
   &--white {
@@ -62,7 +66,6 @@
   font-size: $font-size-base;
   color: $color-primary-dark;
   display: inline-block;
-  text-decoration: none;
   border-bottom: 1px solid $color-primary-dark;
   padding: 5px;
   @include trans(0.25);

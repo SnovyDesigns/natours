@@ -34,14 +34,8 @@ body {
 }
 
 .heading-secondary {
-  display: inline-block;
+  @extend %text-gradient;
   font-size: 3.5rem;
-  text-transform: uppercase;
-  font-weight: $font-weight-bold;
-  letter-spacing: 2px;
-  background-image: $gradient-right;
-  background-clip: text;
-  color: transparent;
 }
 
 .heading-tertiary {

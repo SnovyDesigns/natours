@@ -1,0 +1,23 @@
+mixin form(formData, heading)
+  form(action="#" method="POST").form
+    .u-margin-bottom-medium
+      h2.heading-secondary= heading
+    for data in formData
+      .form__group
+        input(id=`${data.inputID}` type=`${data.inputType}` placeholder=`${data.inputPlaceholder}` required=`${data.isRequired ? "required" : ''}`).form__input
+        label(for=`${data.inputID}`).form__label= data.label
+    .form__group
+      .form__radio-group
+        input#small(name="size" type="radio").form__radio-input
+        label(for="small").form__radio-label
+          span.form__radio-button
+          | Small tour group
+      .form__radio-group
+        input#large(name="size" type="radio").form__radio-input
+        label(for="large").form__radio-label 
+          span.form__radio-button
+          | Large tour group
+    .form__group.u-margin-top-medium
+      button.btn.btn--green(type='submit') Next step &rarr;
+
+

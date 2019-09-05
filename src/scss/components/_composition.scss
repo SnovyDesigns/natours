@@ -4,7 +4,7 @@
   &__photo {
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 0.4);
-    @include brr(2px);
+    @include brr($br-radius);
     position: absolute;
     @include trans(0.25);
     outline-offset: 2rem;

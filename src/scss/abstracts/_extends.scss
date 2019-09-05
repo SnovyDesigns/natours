@@ -1,0 +1,9 @@
+%text-gradient {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  letter-spacing: 2px;
+  background-image: $gradient-right;
+  background-clip: text;
+  color: transparent;
+}

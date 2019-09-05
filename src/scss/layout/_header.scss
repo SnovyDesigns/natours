@@ -6,12 +6,9 @@
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 
-  &__logo-box {
-    @include absolute(top 4rem left 4rem);
-  }
-
   &__logo {
-    height: 3.5rem;
+    @include absolute(top 4rem left 4rem);
+    fill: rgba($color: $color-white, $alpha: 0.9);
   }
 
   &__text-box {
