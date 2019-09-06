@@ -1,0 +1,12 @@
+mixin popup(data)
+  #popup.popup
+    .popup__content
+      .popup__left
+        for img in data.images
+          img(src=require(`./img/${img}`), alt=`${data.alt}`).popup__img
+      .popup__right
+        a(href="#section-tours").popup__close  &times;
+        h2.heading-secondary.u-margin-bottom-small= data.heading
+        h3.heading-tertiary.u-margin-bottom-small= data.subheading
+        p.popup__text= data.text
+        a(href="#").btn.btn--green.u-margin-top-medium Book now

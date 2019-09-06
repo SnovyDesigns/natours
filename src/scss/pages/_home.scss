@@ -56,7 +56,6 @@
   background-size: 100%;
   background-position: center;
   @include brr($br-radius);
-  height: 53.7rem;
   box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 0.2);
 
   &__form {

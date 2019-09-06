@@ -6,6 +6,7 @@ include ./includes/main
 - const toursSectionData = require("./js/data/toursSectionData.js");
 - const storiesSectionData = require("./js/data/storiesSectionData.js");
 - const bookSectionFormData = require("./js/data/bookSectionFormData.js");
+- const popupData = require("./js/data/popupData.js");
 
 //- -----------------------------------
 
@@ -40,7 +41,7 @@ html(lang="en")
         h1.heading-primary
           span.heading-primary--main Outdoors
           span.heading-primary--sub is where life happens
-        a(href="#").btn.btn--white.btn--animated Discover our tours
+        a(href="#section-tours").btn.btn--white.btn--animated Discover our tours
     
     main
       section.section-about
@@ -65,7 +66,7 @@ html(lang="en")
             for data in featuresSectionData
               +feature-box(data)
             
-      section.section-tours
+      section#section-tours.section-tours
         .container
           .u-text-center.u-margin-bottom-big
             h2.heading-secondary Most popular tours
@@ -104,5 +105,4 @@ html(lang="en")
                   a.footer__link(href="#")= item
           p.footer__copyright Project design by Jonas Schmedtmann
 
-
-      
+    +popup(popupData)
