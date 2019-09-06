@@ -18,7 +18,22 @@ html(lang="en")
     title Natours | Exciting tours for adventurous people
     link(href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap', rel='stylesheet')
   body
+    //- Used only to set gradients to svg icons
     +svg-horizontal-gradient
+    
+    .navigation
+      input(type="checkbox")#navi-toggle.navigation__checkbox
+      label(for="navi-toggle").navigation__button
+        span.navigation__icon
+      .navigation__bg
+      nav.navigation__nav
+        ul.navigation__list
+          for item, index in ['About Natours', 'Your benefits', 'Popular tours', 'Stories', 'Book now'] 
+            li.navigation__item
+              a.navigation__link(href="#")
+                span 0#{index+1}
+                | #{item}
+
     header.header
       +svg-logo('header__logo')
       .header__text-box
@@ -26,6 +41,7 @@ html(lang="en")
           span.heading-primary--main Outdoors
           span.heading-primary--sub is where life happens
         a(href="#").btn.btn--white.btn--animated Discover our tours
+    
     main
       section.section-about
         .container

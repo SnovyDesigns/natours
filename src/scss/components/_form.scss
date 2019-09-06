@@ -63,9 +63,7 @@
     @include brr(50%);
     border: 3px solid $color-primary-dark;
     margin-right: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
     &::after {
       content: '';
@@ -80,7 +78,6 @@
 
   &__radio-input {
     display: none;
-    visibility: hidden;
   }
 
   &__radio-input:checked + &__radio-label &__radio-button::after {

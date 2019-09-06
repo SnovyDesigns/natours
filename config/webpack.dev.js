@@ -53,6 +53,7 @@ module.exports = {
                   require('postcss-combine-duplicated-selectors')({
                     removeDuplicatedProperties: true
                   }),
+                  require('postcss-easings'),
                   require('autoprefixer')
                 ];
               }
