@@ -12,6 +12,11 @@
     box-shadow: 0 1rem 3rem rgba($color: $color-black, $alpha: 0.1);
     @include flex-center;
     cursor: pointer;
+
+    @include respond-below(tab-port) {
+      top: 3rem;
+      right: 4rem;
+    }
   }
 
   &__bg {
@@ -24,6 +29,11 @@
     );
     z-index: 1000;
     @include trans(0.8, transform, easeInOutQuint);
+
+    @include respond-below(tab-port) {
+      top: 3.5rem;
+      right: 4.5rem;
+    }
   }
 
   &__nav {
@@ -33,6 +43,7 @@
     @include flex-center;
     opacity: 0;
     @include trans(0.8, $easing: easeInOutBack);
+    overflow: hidden;
   }
 
   &__list {

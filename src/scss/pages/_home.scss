@@ -1,18 +1,23 @@
-.heading-secondary {
-  grid-column: 1 / -1;
-}
-
 .section-about {
   background-color: $color-grey-light-1;
   padding: 25rem 0 30rem;
   margin-top: -20vh;
 
-  .text-wrapper {
-    grid-column: span 2;
+  @include respond-below(tab-land) {
+    padding-bottom: 20rem;
   }
 
-  .composition {
-    grid-column: span 2;
+  @include respond-below(43.75em) {
+    .text-wrapper {
+      order: 2;
+      margin-top: 2rem;
+    }
+
+    .composition {
+      order: 1;
+      max-width: 85%;
+      justify-self: center;
+    }
   }
 }
 
@@ -27,22 +32,38 @@
     transform: skewY(7deg);
     backface-visibility: hidden;
   }
+
+  @include respond-below(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-tours {
   background-color: $color-grey-light-1;
   padding: 25rem 0 15rem;
   margin-top: -11rem;
+
+  @include respond-below(tab-port) {
+    padding: 20rem 0 10rem;
+  }
 }
 
 .section-stories {
   padding: 15rem 0;
   position: relative;
+
+  @include respond-below(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-book {
   padding: 15rem 0;
   background-image: $gradient-right-bottom;
+
+  @include respond-below(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .book {
@@ -53,13 +74,43 @@
       transparent 50%
     ),
     iurl('nat-10.jpg');
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   @include brr($br-radius);
   box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 0.2);
 
+  @include respond-below(tab-port) {
+    background: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 75%,
+        transparent 75%
+      ),
+      iurl('nat-10.jpg');
+    background-size: cover;
+
+    @include respond-below(phone) {
+      background: linear-gradient(
+          105deg,
+          rgba($color-white, 0.9),
+          rgba($color-white, 0.7)
+        ),
+        iurl('nat-10.jpg');
+      background-size: cover;
+    }
+  }
+
   &__form {
     width: 50%;
     padding: 6rem;
+
+    @include respond-below(tab-port) {
+      width: 85%;
+      padding: 2rem;
+    }
+
+    @include respond-below(phone) {
+      width: 100%;
+    }
   }
 }

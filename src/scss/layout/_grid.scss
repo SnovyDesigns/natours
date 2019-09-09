@@ -1,11 +1,30 @@
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
   grid-gap: $grid-gap-vertical $grid-gap-horizontal;
+
+  @include respond-below(tab-land) {
+    grid-gap: $grid-gap-vertical-small $grid-gap-horizontal-small;
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: $grid-gap-vertical $grid-gap-horizontal;
+
+  @include respond-below(tab-port) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: $grid-gap-vertical-small $grid-gap-horizontal-small;
+  }
 }
 
 .tours-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: $grid-gap-vertical $grid-gap-horizontal;
+
+  @include respond-below(tab-port) {
+    grid-gap: 0 $grid-gap-horizontal-small;
+  }
 }

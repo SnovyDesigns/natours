@@ -1,27 +1,28 @@
 .composition {
-  position: relative;
+  display: grid;
+  grid-template: 1fr / 1fr;
 
   &__photo {
     width: 55%;
     box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 0.4);
     @include brr($br-radius);
-    position: absolute;
     @include trans(0.25);
     outline-offset: 2rem;
+    grid-column: 1;
+    grid-row: 1;
 
     &--ph1 {
-      left: 0;
-      top: -2rem;
+      margin-top: -2rem;
     }
 
     &--ph2 {
-      right: 0;
-      top: 2rem;
+      margin-left: auto;
+      margin-top: 2rem;
     }
 
     &--ph3 {
-      left: 20%;
-      top: 10rem;
+      margin-left: 20%;
+      margin-top: 10rem;
     }
 
     &:hover {

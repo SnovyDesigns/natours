@@ -6,22 +6,29 @@
   @include brr($br-radius);
   padding: 6rem;
   padding-left: 9rem;
-  font-size: $font-size-base;
   transform: skewX(-12deg);
 
-  // W tym przypadku sposob z section-features nie zadziala - nie mozemy bowiem nadac dwoch roznych transform na jeden element (u nas ma go .story__shape) - dlatego tez musimy dodac te wlasciwosci osobno dla tekstu i ksztaltu
-  // & > * {
-  //   transform: skewX(12deg);
-  // }
+  @include respond-below(phone) {
+    width: 95%;
+    box-shadow: 0 1.5rem 3rem rgba($color: $color-black, $alpha: 0.1);
+    transform: skewX(0);
+    padding: 3rem;
+    padding-left: 6rem;
+    margin-bottom: 4rem;
+  }
 
   &__shape {
-    // Shape-outside dziala wylacznie z ustawionym float oraz wtedy, gdy taki element ma ustawione width i height
     @include size(15);
     float: left;
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+
+    @include respond-below(phone) {
+      transform: skewX(0);
+      margin-right: 1.5rem;
+    }
   }
 
   &__img {
@@ -33,6 +40,10 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond-below(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {

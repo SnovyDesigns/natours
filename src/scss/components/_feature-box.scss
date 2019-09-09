@@ -7,6 +7,14 @@
   box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 0.15);
   @include trans(0.3, transform);
 
+  @include respond-below(tab-port) {
+    font-size: 1.8rem;
+  }
+
+  @include respond-below(phone) {
+    font-size: 1.9rem;
+  }
+
   &__icon {
     margin: 0 auto 1.5rem;
     stroke: url(#horizontal-gradient);
