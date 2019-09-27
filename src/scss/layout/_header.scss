@@ -7,6 +7,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   // MQ for high resolution screens - -webkit-device-pixel-ratio to odpowiednik min-resolution w Safari (stad musimy go zastosowac - bo pierwszy warunek nie bylby tam brany pod uwage)
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
@@ -26,6 +27,6 @@
 
   &__text-box {
     text-align: center;
-    margin-top: 40%;
+    margin-top: -5%;
   }
 }
