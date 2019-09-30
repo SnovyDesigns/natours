@@ -1,6 +1,7 @@
 .composition {
   display: grid;
   grid-template: 1fr / 1fr;
+  align-items: start;
 
   &__photo {
     width: 55%;
@@ -30,6 +31,12 @@
       transform: scale(1.05) translateY(-5px);
       box-shadow: 0 2.5rem 4rem rgba($color: $color-black, $alpha: 0.5);
       z-index: 2;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      object-fit: cover;
     }
   }
 

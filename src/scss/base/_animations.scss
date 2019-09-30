@@ -1,47 +1,27 @@
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
+// --------------------------------------------------
+//     Styles added only for the animations in JS
+// --------------------------------------------------
 
-  80% {
-    transform: translateX(1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+// Navigation
+.navigation {
+  &__button,
+  &__bg {
+    transform: scale(0);
+    transform-origin: center;
   }
 }
 
-// ----------------------------------------------
+// Header
+.header {
+  &__logo {
+    transform: scale(0);
+    transform-origin: center;
+  }
 
-@keyframes moveInRight {
-  0% {
+  &__main-heading,
+  &__sub-heading,
+  &__btn {
+    visibility: hidden;
     opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  80% {
-    transform: translateX(-1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-// ----------------------------------------------
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

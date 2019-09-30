@@ -29,7 +29,6 @@ body {
     font-size: 6rem;
     font-weight: $font-weight-regular;
     letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out;
 
     @include respond-below(phone) {
       letter-spacing: 1rem;
@@ -40,7 +39,6 @@ body {
     font-size: 2rem;
     font-weight: $font-weight-bold;
     letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
 
     @include respond-below(phone) {
       letter-spacing: 0.5rem;

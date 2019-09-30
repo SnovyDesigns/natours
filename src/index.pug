@@ -2,10 +2,10 @@
 include ./includes/main
 
 //- PAGE DATA
-- const featuresSectionData = require("./js/data/featuresSectionData.js");
-- const toursSectionData = require("./js/data/toursSectionData.js");
-- const storiesSectionData = require("./js/data/storiesSectionData.js");
-- const bookSectionFormData = require("./js/data/bookSectionFormData.js");
+- const sectionFeaturesData = require("./js/data/sectionFeaturesData.js");
+- const sectionToursData = require("./js/data/sectionToursData.js");
+- const sectionStoriesData = require("./js/data/sectionStoriesData.js");
+- const sectionBookData = require("./js/data/sectionBookData.js");
 - const popupData = require("./js/data/popupData.js");
 
 //- -----------------------------------
@@ -29,68 +29,71 @@ html(lang="en")
       .navigation__bg
       nav.navigation__nav
         ul.navigation__list
-          for item, index in ['About Natours', 'Your benefits', 'Popular tours', 'Stories', 'Book now'] 
+          for item, index in [{title: 'About Natours', href: '#section-about'},{title: 'Your benefits', href: '#section-features'},{title: 'Popular tours', href: '#section-tours'},{title: 'Stories', href: '#section-stories'},{title: 'Book now', href: '#section-book'}] 
             li.navigation__item
-              a.navigation__link(href="#")
+              a.navigation__link(href=`${item.href}`)
                 span 0#{index+1}
-                | #{item}
+                | #{item.title}
 
     header.header
       +svg-logo('header__logo')
       .header__text-box
         h1.heading-primary
-          span.heading-primary--main Outdoors
-          span.heading-primary--sub is where life happens
-        a(href="#section-tours").btn.btn--white.btn--animated Discover our tours
+          span.heading-primary--main.header__main-heading Outdoors
+          span.heading-primary--sub.header__sub-heading is where life happens
+        a(href="#section-tours").btn.btn--white.header__btn Discover our tours
     
     main
-      section.section-about
+      section#section-about.section-about
         .container
           .u-text-center.u-margin-bottom-big
-            h2.heading-secondary Exciting tours for adventurous people
+            h2.heading-secondary.section-about__main-heading Exciting tours for adventurous people
           .about-grid
             .text-wrapper
-              h3.heading-tertiary.u-margin-bottom-small You're going to fall in love with nature
-              p.paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eveniet deleniti eius velit ducimus nisi! Quia natus mollitia odio deleniti consectetur! Dolor, eos. 
-              h3.heading-tertiary.u-margin-bottom-small Live adventures like you never have before
-              p.paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam itaque nisi molestias cum?
-              a(href="#").btn-text Learn more &rarr;
+              h3.heading-tertiary.u-margin-bottom-small.section-about__sub-heading You're going to fall in love with nature
+              p.paragraph.section-about__paragraph Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui eveniet deleniti eius velit ducimus nisi! Quia natus mollitia odio deleniti consectetur! Dolor, eos. 
+              h3.heading-tertiary.u-margin-bottom-small.section-about__sub-heading Live adventures like you never have before
+              p.paragraph.section-about__paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam itaque nisi molestias cum?
+              a(href="#").btn-text.section-about__link Learn more &rarr;
             .composition
-              img(src=require("./img/nat-1-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph1
-              img(src=require("./img/nat-2-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph2
-              img(src=require("./img/nat-3-large.jpg"), alt="Composition photo").composition__photo.composition__photo--ph3
+              .composition__photo.composition__photo--ph1
+                img(src=require("./img/nat-1-large.jpg"), alt="Composition photo")
+              .composition__photo.composition__photo--ph2
+                img(src=require("./img/nat-2-large.jpg"), alt="Composition photo")
+              .composition__photo.composition__photo--ph3
+                img(src=require("./img/nat-3-large.jpg"), alt="Composition photo")
       
-      section.section-features
+      section#section-features.section-features
         .container
           .features-grid
-            for data in featuresSectionData
+            for data in sectionFeaturesData
               +feature-box(data)
             
       section#section-tours.section-tours
         .container
           .u-text-center.u-margin-bottom-big
-            h2.heading-secondary Most popular tours
+            h2.heading-secondary.section-tours__main-heading Most popular tours
           .tours-grid
-            for data, index in toursSectionData
+            for data, index in sectionToursData
               +card(data, index)
           .u-text-center.u-margin-top-huge
-            a(href="#", title="title").btn.btn--green Discover all tours 
+            a(href="#", title="title").btn.btn--green.section-tours__btn Discover all tours 
       
-      section.section-stories
+      section#section-stories.section-stories
         +bg-video('video')
         .container
           .u-text-center.u-margin-bottom-big
-            h2.heading-secondary We make people genuinely happy
-          for data in storiesSectionData
+            h2.heading-secondary.section-stories__main-heading We make people genuinely happy
+          for data in sectionStoriesData
               +story(data)
           .u-text-center.u-margin-top-huge
             a(href="#").btn-text Read all stories &rarr; 
 
-      section.section-book
+      section#section-book.section-book
         .container
           .book
-            .book__form
-              +form(bookSectionFormData, 'Start booking now!')
+            .book__form.section-book__form
+              +form(sectionBookData, 'Start booking now!')
               
     footer.footer
       .container
@@ -103,6 +106,9 @@ html(lang="en")
               for item in ['Company','Contact us','Carrers','Privacy policy','Terms']
                 li.footer__item
                   a.footer__link(href="#")= item
-          p.footer__copyright Project design by Jonas Schmedtmann
+          p.footer__copyright 
+            | Layout by Jonas Schmedtmann
+            br
+            | Coding by SnovyDesigns
 
-    +popup(popupData)
+    //- +popup(popupData)

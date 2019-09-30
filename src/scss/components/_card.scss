@@ -10,6 +10,8 @@
   &__side {
     @include size(100%, 55rem);
     @include trans(0.8, all, ease);
+    // transition-property: all;
+    // transition-timing-function: ease;
     @include absolute(top 0 left 0);
     backface-visibility: hidden;
     @include brr($br-radius);

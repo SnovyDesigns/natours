@@ -1,15 +1,15 @@
 .header {
   height: 95vh;
   background-image: $gradient-right-bottom, iurl('hero-small.jpg');
-  background-size: cover;
-  background-position: top;
+  background-size: 120%;
+  background-position: center top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  backface-visibility: hidden;
 
-  // MQ for high resolution screens - -webkit-device-pixel-ratio to odpowiednik min-resolution w Safari (stad musimy go zastosowac - bo pierwszy warunek nie bylby tam brany pod uwage)
   @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
     only screen and (-webkit-device-pixel-ratio: 2) and (min-width: 37.5em),
     only screen and (min-width: 112.5em) {
