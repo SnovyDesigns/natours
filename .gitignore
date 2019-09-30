@@ -3,3 +3,5 @@ _assets
 yarn.lock
 readme.MD
 16px-font-sizes.MD
+.vscode
+
